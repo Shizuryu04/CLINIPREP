@@ -162,7 +162,6 @@ document.addEventListener("DOMContentLoaded", () => {
     blocks: {}, // { blockId: { id, type, x, y, title, content:[...] }, ... }
     connections: {}, // { connId: { id, from, to, note:"" }, ... }
   };
-  st;
   let nextBlockIdCounter = 0;
   let nextConnectionIdCounter = 0;
   let selectedCanvasObjectId = null; // ID của block hoặc connection đang được chọn
