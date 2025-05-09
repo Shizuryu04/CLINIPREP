@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Kết Quả - Cliniprep</title>
+    <!-- Thay đổi Title -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- ... (các link font và Font Awesome giữ nguyên) ... -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- ... (Header giữ nguyên như mcq_topics.html, đảm bảo link "Mcq Quiz" active) ... -->
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li>
+                <a href="case-simulation-library.html" class="nav-link"
+                  >Case Simulation</a
+                >
+              </li>
+              <li>
+                <a href="mcq_topics.html" class="nav-link active">Mcq Quiz</a>
+              </li>
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="user-actions">
+            <button class="btn btn-user" id="userMenuButton">
+              <img
+                src="assets/images/default-user-avatar.png"
+                alt="User Avatar"
+                class="user-avatar-icon"
+              />
+              <span>User</span>
+              <i class="fas fa-caret-down dropdown-icon"></i>
+            </button>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <a href="profile.html" class="dropdown-item">Hồ sơ của tôi</a>
+              <a href="settings.html" class="dropdown-item">Cài đặt</a>
+              <hr class="dropdown-divider" />
+              <a href="index.html" class="dropdown-item logout-item"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="mcq-result-section">
+        <div class="container">
+          <div class="result-header">
+            <h2 id="resultTopicTitle">TOPIC: [TÊN TOPIC] - KẾT QUẢ</h2>
+          </div>
+
+          <div class="result-summary-card">
+            <h3>
+              KẾT QUẢ BÀI LUYỆN TẬP:
+              <span id="resultActualTopic">[TÊN CHỦ ĐỀ]</span>
+            </h3>
+            <div class="score-details">
+              <p>
+                BẠN ĐÃ TRẢ LỜI ĐÚNG: <strong id="correctAnswers">XX</strong> /
+                <strong id="totalQuestions">YY</strong> CÂU
+              </p>
+              <p class="final-score">
+                ĐIỂM SỐ: <strong id="finalScorePercentage">ZZ%</strong>
+              </p>
+            </div>
+            <a
+              href="#"
+              class="btn-link review-answers-link"
+              id="reviewAnswersLink"
+            >
+              <i class="fas fa-search-plus"></i> XEM LẠI & GIẢI THÍCH ĐÁP ÁN
+            </a>
+          </div>
+
+          <div class="result-actions">
+            <a href="mcq_quiz.html" class="btn btn-outline" id="retakeQuizBtn"
+              ><i class="fas fa-redo"></i> LÀM LẠI</a
+            >
+            <a href="mcq_topics.html" class="btn btn-outline"
+              ><i class="fas fa-list-ul"></i> CHỦ ĐỀ KHÁC</a
+            >
+            <a href="dashboard.html" class="btn btn-primary"
+              ><i class="fas fa-home"></i> TRANG CHỦ</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- ... (Footer giữ nguyên) ... -->
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Script cho dropdown user menu -->
+    <script src="js/mcq_result_handler.js" defer></script>
+    <!-- Script riêng cho trang kết quả (nếu cần) -->
+  </body>
+</html>

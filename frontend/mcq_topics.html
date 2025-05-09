@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Topic List - Cliniprep</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- ... (Header giữ nguyên như trước, đảm bảo link "Mcq Quiz" active) ... -->
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li>
+                <a href="case-simulation-library.html" class="nav-link"
+                  >Case Simulation</a
+                >
+              </li>
+              <li>
+                <a href="mcq_topics.html" class="nav-link active">Mcq Quiz</a>
+              </li>
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="user-actions">
+            <button class="btn btn-user" id="userMenuButton">
+              <img
+                src="assets/images/default-user-avatar.png"
+                alt="User Avatar"
+                class="user-avatar-icon"
+              />
+              <span>User</span>
+              <i class="fas fa-caret-down dropdown-icon"></i>
+            </button>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <a href="profile.html" class="dropdown-item">Hồ sơ của tôi</a>
+              <a href="settings.html" class="dropdown-item">Cài đặt</a>
+              <hr class="dropdown-divider" />
+              <a href="index.html" class="dropdown-item logout-item"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-header-section">
+        <div class="container">
+          <h1>MCQ TOPIC LIST</h1>
+        </div>
+      </section>
+
+      <section class="mcq-topic-list-section">
+        <div class="container mcq-topic-container">
+          <div class="topic-selection-area">
+            <h4>Chọn chủ đề để luyện tập:</h4>
+            <ul class="topic-list-condensed">
+              <li><a href="mcq_quiz.html?topic=tim-mach">Tim Mạch</a></li>
+              <li><a href="mcq_quiz.html?topic=ho-hap">Hô Hấp</a></li>
+              <li><a href="mcq_quiz.html?topic=tieu-hoa">Tiêu Hóa</a></li>
+              <li><a href="mcq_quiz.html?topic=noi-tiet">Nội tiết</a></li>
+              <li><a href="mcq_quiz.html?topic=than-kinh">Thần kinh</a></li>
+            </ul>
+            <button
+              class="btn btn-link btn-view-all-topics"
+              id="viewAllTopicsBtn"
+            >
+              <i class="fas fa-list-ul"></i> Xem tất cả chủ đề
+            </button>
+          </div>
+
+          <div class="start-custom-quiz-area">
+            <h4>Hoặc tùy chỉnh bài làm của bạn:</h4>
+            <button class="btn btn-primary btn-block" id="startCustomQuizBtn">
+              <i class="fas fa-tasks"></i> BẮT ĐẦU LÀM BÀI
+            </button>
+          </div>
+
+          <div class="mcq-page-illustration">
+            <img src="assets/images/doctor.png" alt="MCQ Illustration" />
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modal 1: Pop-up hiển thị tất cả chủ đề -->
+    <div id="allTopicsModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Tất cả chủ đề MCQ</h2>
+          <button class="close-modal-btn" id="closeAllTopicsModal">×</button>
+        </div>
+        <div class="modal-body">
+          <ul class="full-topic-list">
+            <!-- Các chủ đề sẽ được liệt kê ở đây, ví dụ: -->
+            <li><a href="mcq_quiz.html?topic=giai-phau">Giải phẫu</a></li>
+            <li><a href="mcq_quiz.html?topic=sinh-ly">Sinh lý</a></li>
+            <li><a href="mcq_quiz.html?topic=hoa-sinh">Hóa sinh</a></li>
+            <li><a href="mcq_quiz.html?topic=mo-phoi">Mô phôi</a></li>
+            <li><a href="mcq_quiz.html?topic=vi-sinh">Vi sinh</a></li>
+            <li>
+              <a href="mcq_quiz.html?topic=ky-sinh-trung">Ký sinh trùng</a>
+            </li>
+            <li><a href="mcq_quiz.html?topic=duoc-ly">Dược lý</a></li>
+            <li><a href="mcq_quiz.html?topic=mien-dich">Miễn dịch</a></li>
+            <li>
+              <a href="mcq_quiz.html?topic=giai-phau-benh">Giải phẫu bệnh</a>
+            </li>
+            <li><a href="mcq_quiz.html?topic=sinh-ly-benh">Sinh lý bệnh</a></li>
+            <hr />
+            <li><a href="mcq_quiz.html?topic=tim-mach">Nội: Tim mạch</a></li>
+            <li><a href="mcq_quiz.html?topic=ho-hap">Nội: Hô hấp</a></li>
+            <li><a href="mcq_quiz.html?topic=tieu-hoa">Nội: Tiêu hóa</a></li>
+            <li>
+              <a href="mcq_quiz.html?topic=than-tiet-nieu"
+                >Nội: Thận - Tiết niệu</a
+              >
+            </li>
+            <li><a href="mcq_quiz.html?topic=noi-tiet">Nội: Nội tiết</a></li>
+            <li><a href="mcq_quiz.html?topic=huyet-hoc">Nội: Huyết học</a></li>
+            <li>
+              <a href="mcq_quiz.html?topic=co-xuong-khop">Nội: Cơ xương khớp</a>
+            </li>
+            <li><a href="mcq_quiz.html?topic=than-kinh">Nội: Thần kinh</a></li>
+            <hr />
+            <li>
+              <a href="mcq_quiz.html?topic=ngoai-khoa"
+                >Ngoại khoa (Tổng quát)</a
+              >
+            </li>
+            <li><a href="mcq_quiz.html?topic=san-phu-khoa">Sản phụ khoa</a></li>
+            <li><a href="mcq_quiz.html?topic=nhi-khoa">Nhi khoa</a></li>
+            <hr />
+            <li><a href="mcq_quiz.html?topic=truyen-nhiem">Truyền nhiễm</a></li>
+            <li><a href="mcq_quiz.html?topic=da-lieu">Da liễu</a></li>
+            <li><a href="mcq_quiz.html?topic=tai-mui-hong">Tai Mũi Họng</a></li>
+            <li><a href="mcq_quiz.html?topic=mat">Mắt</a></li>
+            <li><a href="mcq_quiz.html?topic=ung-thu">Ung thư</a></li>
+            <li>
+              <a href="mcq_quiz.html?topic=chan-doan-hinh-anh"
+                >Chẩn đoán hình ảnh</a
+              >
+            </li>
+            <!-- Thêm các chủ đề khác -->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal 2: Pop-up tùy chỉnh bài làm MCQ -->
+    <div id="customizeQuizModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Tùy chỉnh bài làm MCQ</h2>
+          <button class="close-modal-btn" id="closeCustomizeQuizModal">
+            ×
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="customizeQuizForm">
+            <div class="form-group">
+              <label for="customTopicSelect">Chủ đề:</label>
+              <select id="customTopicSelect" name="customTopic">
+                <option value="tong-hop">
+                  Tổng hợp (Ngẫu nhiên các chủ đề)
+                </option>
+                <!-- Các option chủ đề sẽ được JS thêm vào đây, ví dụ: -->
+                <option value="giai-phau">Giải phẫu</option>
+                <option value="sinh-ly">Sinh lý</option>
+                <option value="hoa-sinh">Hóa sinh</option>
+                <option value="tim-mach">Nội: Tim mạch</option>
+                <!-- ... và các chủ đề khác -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="customQuestionCount">Số lượng câu hỏi:</label>
+              <input
+                type="number"
+                id="customQuestionCount"
+                name="customQuestionCount"
+                value="10"
+                min="5"
+                max="100"
+                step="5"
+              />
+            </div>
+            <div class="form-group">
+              <label for="customDifficultySelect">Độ khó:</label>
+              <select id="customDifficultySelect" name="customDifficulty">
+                <option value="all">Tất cả (Ngẫu nhiên)</option>
+                <option value="easy">Dễ</option>
+                <option value="medium">Trung bình</option>
+                <option value="hard">Khó</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">
+              Bắt đầu
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <!-- ... (Footer giữ nguyên) ... -->
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Script cho dropdown user menu -->
+    <script src="js/mcq_topic_page_handler.js" defer></script>
+    <!-- Script cho trang này -->
+  </body>
+</html>

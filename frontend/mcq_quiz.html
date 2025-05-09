@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MCQ Quiz - Cliniprep</title>
+    <!-- Thay đổi Title -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- ... (Header giữ nguyên như mcq_topics.html, đảm bảo link "Mcq Quiz" active) ... -->
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li>
+                <a href="case-simulation-library.html" class="nav-link"
+                  >Case Simulation</a
+                >
+              </li>
+              <li>
+                <a href="mcq_topics.html" class="nav-link active">Mcq Quiz</a>
+              </li>
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="user-actions">
+            <button class="btn btn-user" id="userMenuButton">
+              <img
+                src="assets/images/default-user-avatar.png"
+                alt="User Avatar"
+                class="user-avatar-icon"
+              />
+              <span>User</span>
+              <i class="fas fa-caret-down dropdown-icon"></i>
+            </button>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <a href="profile.html" class="dropdown-item">Hồ sơ của tôi</a>
+              <a href="settings.html" class="dropdown-item">Cài đặt</a>
+              <hr class="dropdown-divider" />
+              <a href="index.html" class="dropdown-item logout-item"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="mcq-quiz-section">
+        <div class="container">
+          <div class="quiz-header-info">
+            <h2 id="quizTopicTitle">TOPIC: [TÊN TOPIC] - QUIZ</h2>
+            <div class="quiz-meta">
+              <span id="questionCount">Số lượng: 01/50</span>
+              <span id="quizDifficulty">Độ khó: Trung bình</span>
+            </div>
+          </div>
+
+          <div class="quiz-area">
+            <div class="question-container">
+              <p class="question-number" id="questionNumber">CÂU 1:</p>
+              <p class="question-text" id="questionText">
+                ĐỀ BÀI SẼ HIỂN THỊ Ở ĐÂY...
+              </p>
+            </div>
+
+            <div class="answer-options" id="answerOptions">
+              <label class="answer-option">
+                <input type="radio" name="mcqOption" value="A" />
+                <span class="option-letter">A.</span>
+                <span class="option-text">Lựa chọn A sẽ hiển thị ở đây...</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="mcqOption" value="B" />
+                <span class="option-letter">B.</span>
+                <span class="option-text">Lựa chọn B sẽ hiển thị ở đây...</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="mcqOption" value="C" />
+                <span class="option-letter">C.</span>
+                <span class="option-text">Lựa chọn C sẽ hiển thị ở đây...</span>
+              </label>
+              <label class="answer-option">
+                <input type="radio" name="mcqOption" value="D" />
+                <span class="option-letter">D.</span>
+                <span class="option-text">Lựa chọn D sẽ hiển thị ở đây...</span>
+              </label>
+            </div>
+
+            <div class="quiz-actions">
+              <button
+                class="btn btn-outline"
+                id="prevQuestionBtn"
+                style="display: none"
+              >
+                Câu Trước
+              </button>
+              <!-- Nút này ẩn ban đầu -->
+              <button class="btn btn-primary" id="nextQuestionBtn">
+                TIẾP TỤC
+              </button>
+              <button
+                class="btn btn-secondary"
+                id="submitQuizBtn"
+                style="display: none"
+              >
+                NỘP BÀI
+              </button>
+              <!-- Nút này sẽ hiện ở câu cuối -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <!-- ... (Footer giữ nguyên) ... -->
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Script cho dropdown user menu -->
+    <script src="js/mcq_handler.js" defer></script>
+    <!-- Script cho logic MCQ -->
+  </body>
+</html>

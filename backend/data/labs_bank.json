@@ -1,0 +1,146 @@
+{
+  "categories": [
+    { "id": "hematology", "name": "Huyết học" },
+    { "id": "biochemistry", "name": "Sinh hóa máu" },
+    { "id": "urinalysis", "name": "Xét nghiệm nước tiểu" },
+    { "id": "imaging_xray", "name": "X-quang" },
+    { "id": "imaging_ultrasound", "name": "Siêu âm" },
+    { "id": "imaging_ct", "name": "CT Scan" },
+    { "id": "cardiology_specific", "name": "CLS Tim mạch chuyên biệt" }
+  ],
+  "labs": [
+    {
+      "id": "lab_cbc",
+      "category_id": "hematology",
+      "name": "Công thức máu (CBC)",
+      "keywords": [
+        "công thức máu",
+        "tổng phân tích tế bào máu",
+        "cbc",
+        "hemoglobin",
+        "bạch cầu",
+        "tiểu cầu"
+      ]
+    },
+    {
+      "id": "lab_blood_group",
+      "category_id": "hematology",
+      "name": "Nhóm máu ABO/Rh",
+      "keywords": ["nhóm máu", "abo", "rh"]
+    },
+
+    {
+      "id": "lab_glucose",
+      "category_id": "biochemistry",
+      "name": "Glucose máu (Đường huyết)",
+      "keywords": ["glucose", "đường huyết", "fbs"]
+    },
+    {
+      "id": "lab_urea",
+      "category_id": "biochemistry",
+      "name": "Urea máu",
+      "keywords": ["urea", "bun"]
+    },
+    {
+      "id": "lab_creatinine",
+      "category_id": "biochemistry",
+      "name": "Creatinine máu",
+      "keywords": ["creatinine", "chức năng thận"]
+    },
+    {
+      "id": "lab_ast",
+      "category_id": "biochemistry",
+      "name": "AST (SGOT)",
+      "keywords": ["ast", "sgot", "men gan"]
+    },
+    {
+      "id": "lab_alt",
+      "category_id": "biochemistry",
+      "name": "ALT (SGPT)",
+      "keywords": ["alt", "sgpt", "men gan"]
+    },
+    {
+      "id": "lab_bilirubin_total",
+      "category_id": "biochemistry",
+      "name": "Bilirubin toàn phần",
+      "keywords": ["bilirubin toàn phần", "vàng da"]
+    },
+    {
+      "id": "lab_electrolytes",
+      "category_id": "biochemistry",
+      "name": "Điện giải đồ (Na, K, Cl)",
+      "keywords": [
+        "điện giải",
+        "na",
+        "k",
+        "cl",
+        "sodium",
+        "potassium",
+        "chloride"
+      ]
+    },
+    {
+      "id": "lab_crp",
+      "category_id": "biochemistry",
+      "name": "CRP (C-Reactive Protein)",
+      "keywords": ["crp", "viêm"]
+    },
+
+    {
+      "id": "lab_ecg",
+      "category_id": "cardiology_specific",
+      "name": "Điện tâm đồ (ECG/EKG)",
+      "keywords": ["ecg", "ekg", "điện tim", "điện tâm đồ"]
+    },
+    {
+      "id": "lab_troponin_ths",
+      "category_id": "cardiology_specific",
+      "name": "Troponin T hs (High-sensitivity)",
+      "keywords": ["troponin", "men tim", "nhồi máu cơ tim"]
+    },
+    {
+      "id": "lab_troponin_i",
+      "category_id": "cardiology_specific",
+      "name": "Troponin I",
+      "keywords": ["troponin i", "men tim"]
+    },
+    {
+      "id": "lab_ckmb",
+      "category_id": "cardiology_specific",
+      "name": "CK-MB",
+      "keywords": ["ck-mb", "men tim"]
+    },
+    {
+      "id": "lab_pro_bnp",
+      "category_id": "cardiology_specific",
+      "name": "Pro-BNP (NT-proBNP)",
+      "keywords": ["pro-bnp", "nt-probnp", "suy tim"]
+    },
+
+    {
+      "id": "lab_xray_chest_pa",
+      "category_id": "imaging_xray",
+      "name": "X-quang ngực thẳng (PA)",
+      "keywords": ["x quang ngực", "phổi", "chest x-ray", "cxr"]
+    },
+    {
+      "id": "lab_xray_abdomen_kub",
+      "category_id": "imaging_xray",
+      "name": "X-quang bụng không chuẩn bị (KUB)",
+      "keywords": ["x quang bụng", "kub"]
+    },
+
+    {
+      "id": "lab_ultrasound_abdomen",
+      "category_id": "imaging_ultrasound",
+      "name": "Siêu âm ổ bụng tổng quát",
+      "keywords": ["siêu âm bụng", "gan", "mật", "lách", "thận"]
+    },
+    {
+      "id": "lab_echocardiogram",
+      "category_id": "imaging_ultrasound",
+      "name": "Siêu âm tim (Echocardiogram)",
+      "keywords": ["siêu âm tim", "echo"]
+    }
+  ]
+}

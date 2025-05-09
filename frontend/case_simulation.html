@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mô Phỏng Ca Lâm Sàng - Cliniprep</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <!-- Copy Header phiên bản đã đăng nhập (tương tự mcq_quiz.html) -->
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li>
+                <a href="case_library.html" class="nav-link active"
+                  >Case Simulation</a
+                >
+              </li>
+              <!-- Active -->
+              <li><a href="mcq_topics.html" class="nav-link">Mcq Quiz</a></li>
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="user-actions">
+            <button class="btn btn-user" id="userMenuButton">
+              <img
+                src="assets/images/default-user-avatar.png"
+                alt="User Avatar"
+                class="user-avatar-icon"
+              />
+              <span>User</span>
+              <!-- JS sẽ cập nhật tên -->
+              <i class="fas fa-caret-down dropdown-icon"></i>
+            </button>
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <a href="profile.html" class="dropdown-item">Hồ sơ của tôi</a>
+              <a href="settings.html" class="dropdown-item">Cài đặt</a>
+              <hr class="dropdown-divider" />
+              <a href="#" class="dropdown-item logout-item" id="logoutButtonSim"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="case-simulation-page-content">
+        <div class="container">
+          <div class="case-sim-header-bar">
+            <h1 id="caseSimTitleLoading">Đang tải thông tin ca bệnh...</h1>
+            <div class="case-sim-top-actions">
+              <button class="btn btn-outline btn-sm" id="viewMedicalRecordBtn">
+                <i class="fas fa-file-medical"></i> Bệnh Án Điện Tử
+              </button>
+              <button
+                class="btn btn-primary btn-sm"
+                id="openClinicalCanvasBtn"
+                disabled
+              >
+                <i class="fas fa-project-diagram"></i> Mở Canvas Tư Duy
+              </button>
+            </div>
+          </div>
+
+          <div class="case-initial-presentation" id="caseInitialInfoArea">
+            <p class="loading-text">Đang tải tình huống ban đầu...</p>
+            <!-- Thông tin ban đầu của case sẽ được JS chèn vào đây -->
+          </div>
+
+          <div class="main-clinical-actions">
+            <button class="btn btn-action-major" id="openAskHistoryModalBtn">
+              <i class="fas fa-comments"></i>
+              <span>Hỏi Bệnh & Bệnh Sử</span>
+            </button>
+            <button class="btn btn-action-major" id="openPhysicalExamModalBtn">
+              <i class="fas fa-stethoscope"></i>
+              <span>Khám Lâm Sàng</span>
+            </button>
+            <button
+              class="btn btn-action-major"
+              id="openOrderLabsModalBtn"
+              disabled
+            >
+              <i class="fas fa-vials"></i>
+              <span>Đề xuất CLS</span>
+              <span class="lock-indicator" id="labsLockIndicator"
+                ><i class="fas fa-lock"></i
+              ></span>
+            </button>
+          </div>
+
+          <div class="student-action-log-container">
+            <h4><i class="fas fa-history"></i> Nhật ký hành động của bạn:</h4>
+            <ul id="studentActionLogList">
+              <!-- Các hành động sẽ được JS ghi vào đây -->
+              <!-- <li>Đã hỏi: Lý do vào viện là gì?</li> -->
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- MODAL 1: HỎI BỆNH & BỆNH SỬ -->
+      <div id="askHistoryModal" class="modal large-modal interaction-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>
+              <i class="fas fa-comments-dollar"></i> Khai Thác Bệnh Sử & Tiền Sử
+            </h2>
+            <button class="close-modal-btn" data-modal-id="askHistoryModal">
+              ×
+            </button>
+          </div>
+          <div class="modal-body modal-columns-layout">
+            <div
+              class="interaction-column column-categories"
+              id="historyCategoriesColumn"
+            >
+              <h4>CHỌN MỤC HỎI:</h4>
+              <div class="items-list-scrollable" id="historyCategoriesList">
+                <p class="column-loading-text">Đang tải danh mục...</p>
+                <!-- JS sẽ populate các mục ở đây -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-details"
+              id="historyQuestionsColumn"
+            >
+              <h4>CÁC CÂU HỎI GỢI Ý:</h4>
+              <div class="items-list-scrollable" id="historyQuestionsList">
+                <p class="column-placeholder-text">
+                  Chọn một mục hỏi để xem câu hỏi.
+                </p>
+                <!-- JS sẽ populate câu hỏi ở đây -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-collected-info"
+              id="historyCollectedInfoColumn"
+            >
+              <h4>THÔNG TIN THU THẬP ĐƯỢC:</h4>
+              <div
+                class="collected-items-list-scrollable"
+                id="historyCollectedItemsContainer"
+              >
+                <p class="column-placeholder-text">
+                  Thông tin sẽ xuất hiện ở đây sau khi bạn hỏi.
+                </p>
+                <!-- Thông tin đã hỏi sẽ hiện ở đây với checkbox -->
+              </div>
+              <button
+                class="btn btn-primary btn-block"
+                id="addSelectedHistoryToMedicalRecordBtn"
+                disabled
+              >
+                <i class="fas fa-notes-medical"></i> Thêm vào Bệnh Án
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 2: KHÁM LÂM SÀNG -->
+      <div id="physicalExamModal" class="modal large-modal interaction-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-user-md"></i> Thực Hiện Khám Lâm Sàng</h2>
+            <button class="close-modal-btn" data-modal-id="physicalExamModal">
+              ×
+            </button>
+          </div>
+          <div class="modal-body modal-columns-layout">
+            <div
+              class="interaction-column column-categories"
+              id="examCategoriesColumn"
+            >
+              <h4>CHỌN HỆ CƠ QUAN/KỸ NĂNG:</h4>
+              <div class="items-list-scrollable" id="examCategoriesList">
+                <p class="column-loading-text">Đang tải danh mục...</p>
+                <!-- JS populate các hệ cơ quan/nhóm kỹ năng -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-details"
+              id="examSkillDetailsColumn"
+            >
+              <h4>CHI TIẾT KỸ NĂNG & MCQ:</h4>
+              <div class="items-list-scrollable" id="examSkillInteractionArea">
+                <p class="column-placeholder-text">
+                  Chọn một kỹ năng để bắt đầu.
+                </p>
+                <!-- JS populate danh sách kỹ năng con hoặc MCQ kiểm tra -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-collected-info"
+              id="examCollectedInfoColumn"
+            >
+              <h4>KẾT QUẢ KHÁM THU THẬP:</h4>
+              <div
+                class="collected-items-list-scrollable"
+                id="examCollectedItemsContainer"
+              >
+                <p class="column-placeholder-text">
+                  Kết quả khám sẽ xuất hiện ở đây.
+                </p>
+                <!-- Kết quả khám sẽ hiện ở đây với checkbox -->
+              </div>
+              <button
+                class="btn btn-primary btn-block"
+                id="addSelectedExamToMedicalRecordBtn"
+                disabled
+              >
+                <i class="fas fa-notes-medical"></i> Thêm vào Bệnh Án
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 3: ĐỀ XUẤT CẬN LÂM SÀNG -->
+      <div id="orderLabsModal" class="modal large-modal interaction-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-microscope"></i> Đề Xuất Cận Lâm Sàng</h2>
+            <button class="close-modal-btn" data-modal-id="orderLabsModal">
+              ×
+            </button>
+          </div>
+          <div class="modal-body modal-columns-layout">
+            <div
+              class="interaction-column column-categories"
+              id="labCategoriesColumn"
+            >
+              <h4>CHỌN LOẠI CLS:</h4>
+              <input
+                type="text"
+                id="searchLabInput"
+                class="modal-search-input"
+                placeholder="Tìm kiếm CLS..."
+              />
+              <div class="items-list-scrollable" id="labCategoriesList">
+                <p class="column-loading-text">Đang tải danh mục...</p>
+                <!-- JS populate danh mục CLS và list CLS (sau khi filter) -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-details"
+              id="labResultDetailsColumn"
+            >
+              <h4>KẾT QUẢ CLS (NẾU CÓ):</h4>
+              <div class="items-list-scrollable" id="labResultDisplayArea">
+                <p class="column-placeholder-text">
+                  Chọn một CLS để xem kết quả (nếu có).
+                </p>
+                <!-- Kết quả của CLS đã chọn -->
+              </div>
+            </div>
+            <div
+              class="interaction-column column-collected-info"
+              id="labCollectedInfoColumn"
+            >
+              <h4>CLS ĐÃ CHỌN & KẾT QUẢ:</h4>
+              <div
+                class="collected-items-list-scrollable"
+                id="labCollectedItemsContainer"
+              >
+                <p class="column-placeholder-text">
+                  CLS đã chọn sẽ xuất hiện ở đây.
+                </p>
+                <!-- Kết quả CLS sẽ hiện ở đây với checkbox -->
+              </div>
+              <button
+                class="btn btn-primary btn-block"
+                id="addSelectedLabsToMedicalRecordBtn"
+                disabled
+              >
+                <i class="fas fa-notes-medical"></i> Thêm vào Bệnh Án
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 4: BỆNH ÁN ĐIỆN TỬ (HIỂN THỊ) -->
+      <div id="medicalRecordDisplayModal" class="modal">
+        <!-- Kích thước mặc định, có thể cần modal-lg -->
+        <div class="modal-content modal-lg">
+          <div class="modal-header">
+            <h2><i class="fas fa-file-invoice"></i> Bệnh Án Điện Tử</h2>
+            <button
+              class="close-modal-btn"
+              data-modal-id="medicalRecordDisplayModal"
+            >
+              ×
+            </button>
+          </div>
+          <div class="modal-body" id="medicalRecordDisplayContentContainer">
+            <form id="displayedMedicalRecordForm">
+              <!-- Hành chính -->
+              <fieldset>
+                <legend>I. HÀNH CHÍNH</legend>
+                <div class="form-grid">
+                  <div class="form-field">
+                    <label>Họ tên:</label>
+                    <p id="mrDisplay_hoTen">-</p>
+                  </div>
+                  <div class="form-field">
+                    <label>Tuổi:</label>
+                    <p id="mrDisplay_tuoi">-</p>
+                  </div>
+                  <div class="form-field">
+                    <label>Giới:</label>
+                    <p id="mrDisplay_gioiTinh">-</p>
+                  </div>
+                  <div class="form-field col-span-2">
+                    <label>Địa chỉ:</label>
+                    <p id="mrDisplay_diaChi">-</p>
+                  </div>
+                  <div class="form-field">
+                    <label>Nghề nghiệp:</label>
+                    <p id="mrDisplay_ngheNghiep">-</p>
+                  </div>
+                </div>
+              </fieldset>
+              <!-- Lý do vào viện -->
+              <fieldset>
+                <legend>II. LÝ DO VÀO VIỆN</legend>
+                <div class="form-field full-width">
+                  <textarea id="mrDisplay_lyDoVaoVien" rows="2" readonly>
+-</textarea
+                  >
+                </div>
+              </fieldset>
+              <!-- Bệnh sử -->
+              <fieldset>
+                <legend>III. BỆNH SỬ</legend>
+                <div class="form-field full-width">
+                  <textarea id="mrDisplay_benhSu" rows="5" readonly>-</textarea>
+                </div>
+              </fieldset>
+              <!-- Tiền sử -->
+              <fieldset>
+                <legend>IV. TIỀN SỬ</legend>
+                <div class="form-field full-width">
+                  <label>1. Bản thân:</label
+                  ><textarea id="mrDisplay_tienSuBanThan" rows="3" readonly>
+-</textarea
+                  >
+                </div>
+                <div class="form-field full-width">
+                  <label>2. Gia đình:</label
+                  ><textarea id="mrDisplay_tienSuGiaDinh" rows="2" readonly>
+-</textarea
+                  >
+                </div>
+                <div class="form-field full-width">
+                  <label>3. Dịch tễ/Lối sống:</label
+                  ><textarea id="mrDisplay_dichTe" rows="2" readonly>
+-</textarea
+                  >
+                </div>
+              </fieldset>
+              <!-- Khám bệnh -->
+              <fieldset>
+                <legend>V. KHÁM BỆNH</legend>
+                <div class="form-field full-width">
+                  <label>1. Toàn thân (Dấu hiệu sinh tồn):</label>
+                  <textarea id="mrDisplay_khamToanThan" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- Đã có ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>2. Tuần hoàn (Tim mạch):</label>
+                  <textarea id="mrDisplay_khamTuanHoan" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- Đã có ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>3. Hô hấp:</label>
+                  <textarea id="mrDisplay_khamHoHap" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- Đã có ID -->
+                </div>
+
+                <!-- ===== SỬA ĐỔI VÀ BỔ SUNG TỪ ĐÂY ===== -->
+                <div class="form-field full-width">
+                  <label>4. Tiêu hóa:</label>
+                  <textarea id="mrDisplay_khamTieuHoa" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- THÊM ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>5. Thận - Tiết niệu:</label>
+                  <textarea id="mrDisplay_khamThanTietNieu" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- THÊM ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>6. Cơ xương khớp:</label>
+                  <textarea id="mrDisplay_khamCoXuongKhop" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- THÊM ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>7. Thần kinh:</label>
+                  <textarea id="mrDisplay_khamThanKinh" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- THÊM ID -->
+                </div>
+                <div class="form-field full-width">
+                  <label>8. Các cơ quan khác:</label>
+                  <!-- Đổi số thứ tự và label nếu cần -->
+                  <textarea id="mrDisplay_khamCoQuanKhac" rows="3" readonly>
+-</textarea
+                  >
+                  <!-- Giữ lại ID này hoặc đổi nếu key trong JS khác -->
+                </div>
+                <!-- ===== KẾT THÚC SỬA ĐỔI ===== -->
+              </fieldset>
+              <!-- Tóm tắt bệnh án (SV tự điền trong Canvas hoặc bước sau) -->
+              <fieldset>
+                <legend>VI. TÓM TẮT BỆNH ÁN (Sinh viên tự điền sau)</legend>
+                <div class="form-field full-width">
+                  <textarea
+                    id="mrDisplay_tomTatBenhAn"
+                    rows="4"
+                    placeholder="Sinh viên sẽ tóm tắt các dữ kiện quan trọng ở đây..."
+                    readonly
+                  ></textarea>
+                </div>
+              </fieldset>
+              <!-- Chẩn đoán sơ bộ (SV tự điền trong Canvas hoặc bước sau) -->
+              <fieldset>
+                <legend>VII. CHẨN ĐOÁN SƠ BỘ (Sinh viên tự điền sau)</legend>
+                <div class="form-field full-width">
+                  <textarea
+                    id="mrDisplay_chanDoanSoBo"
+                    rows="3"
+                    placeholder="Sinh viên sẽ đưa ra chẩn đoán sơ bộ ở đây..."
+                    readonly
+                  ></textarea>
+                </div>
+              </fieldset>
+              <!-- Kết quả CLS -->
+              <fieldset>
+                <legend>VIII. KẾT QUẢ CẬN LÂM SÀNG ĐÃ CÓ</legend>
+                <div class="form-field full-width">
+                  <textarea id="mrDisplay_ketQuaCLS" rows="5" readonly>
+-</textarea
+                  >
+                </div>
+                <!-- Có thể thêm khu vực hiển thị hình ảnh CLS nếu có -->
+              </fieldset>
+              <!-- Chẩn đoán xác định (SV tự điền sau) -->
+              <fieldset>
+                <legend>IX. CHẨN ĐOÁN XÁC ĐỊNH (Sinh viên tự điền sau)</legend>
+                <div class="form-field full-width">
+                  <textarea
+                    id="mrDisplay_chanDoanXacDinh"
+                    rows="3"
+                    placeholder="Sinh viên sẽ đưa ra chẩn đoán xác định ở đây..."
+                    readonly
+                  ></textarea>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="triggerTagExtractionFromMRBtn"
+              disabled
+            >
+              <i class="fas fa-tags"></i> Trích xuất Tags (cho Canvas)
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODAL 5: CLINICAL REASONING CANVAS -->
+      <div id="clinicalReasoningCanvasModal" class="modal extra-large-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-brain"></i> Clinical Reasoning Canvas</h2>
+            <button
+              class="close-modal-btn"
+              data-modal-id="clinicalReasoningCanvasModal"
+            >
+              ×
+            </button>
+          </div>
+          <div class="modal-body canvas-container-flex">
+            <!-- Panel Danh sách Tags -->
+            <div class="tag-list-panel-canvas" id="canvasTagListPanel">
+              <h3><i class="fas fa-tags"></i> DANH SÁCH TAGS</h3>
+              <div class="tag-color-legend">
+                <span class="legend-item" style="background-color: #ffd700"
+                  >Hành chính, Tiền sử, Yếu tố nguy cơ</span
+                >
+                <span class="legend-item" style="background-color: #ffa07a"
+                  >Triệu chứng Cơ năng</span
+                >
+                <span class="legend-item" style="background-color: #90ee90"
+                  >Triệu chứng Thực thể</span
+                >
+                <span class="legend-item" style="background-color: #add8e6"
+                  >Kết quả CLS</span
+                >
+                <!-- Thêm màu cho chẩn đoán nếu cần -->
+                <span class="legend-item" style="background-color: #da70d6"
+                  >Chẩn đoán</span
+                >
+              </div>
+              <ul id="canvasAvailableTagsList">
+                <!-- Đổi lại ID này cho nhất quán -->
+                <li class="canvas-tag-placeholder">
+                  Chưa có tags nào được trích xuất.
+                </li>
+              </ul>
+            </div>
+            <!-- Khu vực Canvas chính -->
+            <div class="main-canvas-area-wrapper-flex">
+              <div class="canvas-toolbar-main" id="canvasToolbar">
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="info-block"
+                  title="Tạo Khối Thông tin"
+                >
+                  <i class="fas fa-info-circle"></i> Info Block
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="ddx-block"
+                  title="Tạo Khối Chẩn đoán Sơ bộ"
+                >
+                  <i class="fas fa-lightbulb"></i> DDx Block
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="investigation-block"
+                  title="Tạo Khối Xét nghiệm"
+                >
+                  <i class="fas fa-flask"></i> Lab Block
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="diff-diag-block"
+                  title="Tạo Khối Chẩn đoán Phân biệt"
+                >
+                  <i class="fas fa-balance-scale"></i> Diff.Dx Block
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="draw-arrow"
+                  title="Vẽ Mũi tên Suy luận"
+                  disabled
+                >
+                  <!-- Tạm disable -->
+                  <i class="fas fa-long-arrow-alt-right"></i> Arrow
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="delete-selected"
+                  title="Xóa đối tượng chọn"
+                >
+                  <i class="fas fa-trash-alt"></i> Delete
+                </button>
+                <button
+                  class="btn btn-sm btn-canvas-tool"
+                  data-tool="clear-canvas"
+                  title="Xóa toàn bộ Canvas"
+                >
+                  <i class="fas fa-eraser"></i> Clear All
+                </button>
+              </div>
+              <!-- KHU VỰC CANVAS THỰC SỰ -->
+              <div class="actual-canvas-drawing-area" id="actualCanvasArea">
+                <p class="canvas-placeholder-text">
+                  Kéo thả Tags từ danh sách vào đây để bắt đầu<br />hoặc sử dụng
+                  thanh công cụ để tạo các khối.
+                </p>
+                <!-- Các khối và mũi tên sẽ được thêm vào đây bằng JS -->
+              </div>
+              <!-- /KHU VỰC CANVAS THỰC SỰ -->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" id="saveCanvasProgressBtn">
+              Lưu Nháp Canvas
+            </button>
+            <button class="btn btn-primary" id="submitCanvasForAnalysisBtn">
+              Nộp Canvas Phân Tích
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2024 Cliniprep. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <!-- Script chung -->
+    <script src="js/case_simulation_page_handler.js" defer></script>
+    <!-- Thư viện cho Canvas (nếu dùng): -->
+    <!-- <script src="https://unpkg.com/konva@9/konva.min.js"></script> -->
+  </body>
+</html>

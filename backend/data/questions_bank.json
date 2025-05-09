@@ -1,0 +1,74 @@
+{
+  "categories": [
+    { "id": "chief_complaint", "name": "Lý do vào viện" },
+    { "id": "present_illness", "name": "Quá trình Bệnh lý" },
+    { "id": "past_medical_history", "name": "Tiền sử Bản thân" },
+    { "id": "family_history", "name": "Tiền sử Gia đình" },
+    { "id": "social_history", "name": "Tiền sử Dịch tễ/Lối sống" },
+    { "id": "review_of_systems", "name": "Lược qua các cơ quan" }
+  ],
+  "questions": [
+    {
+      "id": "q_cc_01",
+      "category_id": "chief_complaint",
+      "text": "Xin ông/bà cho biết lý do chính khiến ông/bà đến khám hôm nay?"
+    },
+    {
+      "id": "q_cc_02_distractor",
+      "category_id": "chief_complaint",
+      "text": "Ông/bà có bị sốt không?"
+    },
+
+    {
+      "id": "q_pi_01_chestpain_onset",
+      "category_id": "present_illness",
+      "text": "Cơn đau ngực bắt đầu từ khi nào? Hoàn cảnh khởi phát?"
+    },
+    {
+      "id": "q_pi_02_chestpain_char",
+      "category_id": "present_illness",
+      "text": "Tính chất cơn đau như thế nào (nhói, âm ỉ, bóp nghẹt, nóng rát...)?"
+    },
+    {
+      "id": "q_pi_03_chestpain_radiation",
+      "category_id": "present_illness",
+      "text": "Cơn đau có lan đi đâu không?"
+    },
+    {
+      "id": "q_pi_04_chestpain_associated_symp",
+      "category_id": "present_illness",
+      "text": "Ngoài đau ngực, ông/bà còn có triệu chứng nào khác kèm theo không (khó thở, buồn nôn, vã mồ hôi...)?"
+    },
+    {
+      "id": "q_pi_05_distractor_cough",
+      "category_id": "present_illness",
+      "text": "Ông/bà có ho hay khạc đờm gì không?"
+    },
+    {
+      "id": "q_pi_06_abdominal_pain_location",
+      "category_id": "present_illness",
+      "text": "Nếu đau bụng, vị trí đau bụng cụ thể ở đâu?"
+    },
+
+    {
+      "id": "q_pmh_01_htn",
+      "category_id": "past_medical_history",
+      "text": "Ông/bà có tiền sử bệnh tăng huyết áp không? Nếu có, đã điều trị như thế nào?"
+    },
+    {
+      "id": "q_pmh_02_dm",
+      "category_id": "past_medical_history",
+      "text": "Ông/bà có tiền sử bệnh đái tháo đường không? Điều trị ra sao?"
+    },
+    {
+      "id": "q_pmh_03_dyslipidemia",
+      "category_id": "past_medical_history",
+      "text": "Ông/bà có bị rối loạn mỡ máu không?"
+    },
+    {
+      "id": "q_pmh_04_distractor_asthma",
+      "category_id": "past_medical_history",
+      "text": "Ông/bà có tiền sử hen phế quản hay bệnh phổi tắc nghẽn mạn tính không?"
+    }
+  ]
+}

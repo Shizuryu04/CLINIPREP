@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng ký - Cliniprep</title>
+    <!-- Thay đổi Title -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <!-- Bỏ class 'active' -->
+              <li>
+                <a href="case-simulation-library.html" class="nav-link"
+                  >Case Simulation</a
+                >
+              </li>
+              <li>
+                <a href="mcq_topics.html" class="nav-link">Mcq Quiz</a>
+              </li>
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="auth-buttons">
+            <a href="register.html" class="btn btn-auth active">Đăng ký</a>
+            <!-- Thêm class 'active' cho nút hiện tại -->
+            <a href="login.html" class="btn btn-auth">Đăng nhập</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="auth-section">
+        <div class="container auth-container">
+          <div class="auth-image-side">
+            <div class="auth-branding">
+              <!-- Đảm bảo src="assets/images/avt.png" là đúng, hoặc dùng logo khác nếu muốn -->
+              <img
+                src="assets/images/avt.png"
+                alt="Cliniprep Logo"
+                class="auth-logo"
+              />
+              <h2>THAM GIA CỘNG ĐỒNG CLINIPREP ĐỂ</h2>
+              <p>BẮT ĐẦU RÈN LUYỆN KỸ NĂNG Y KHOA CỦA BẠN NGAY HÔM NAY!</p>
+            </div>
+          </div>
+          <div class="auth-form-side">
+            <div class="auth-form-container">
+              <h3>ĐĂNG KÝ</h3>
+              <form action="#" method="POST">
+                <!-- action và method sẽ được xử lý bởi backend sau -->
+                <div class="form-group">
+                  <label for="fullName">Họ và Tên</label>
+                  <!-- Thêm trường Họ và Tên nếu cần -->
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    placeholder="Nhập họ và tên của bạn"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="Nhập địa chỉ email của bạn"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="password">Mật khẩu</label>
+                  <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    required
+                    placeholder="Tạo mật khẩu (ít nhất 8 ký tự)"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="confirm-password">Xác nhận Mật khẩu</label>
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    name="confirm-password"
+                    required
+                    placeholder="Nhập lại mật khẩu của bạn"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary btn-auth-submit">
+                  TIẾP TỤC
+                </button>
+              </form>
+              <div class="auth-switch">
+                <p>Đã có tài khoản? <a href="login.html">Đăng nhập ngay</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© 2024 Cliniprep. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - Cliniprep</title>
+    <!-- Thay đổi Title -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome cho icon user và mũi tên (nếu bạn muốn dùng) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <a href="index.html" class="logo-area">
+            <img
+              src="assets/images/avt.png"
+              alt="Cliniprep Logo"
+              class="logo-img"
+            />
+            <span class="logo-text">CLINIPREP</span>
+          </a>
+          <nav class="main-nav">
+            <ul>
+              <!-- Link Trang chủ có thể không 'active' ở đây, tùy bạn quyết định -->
+              <li><a href="index.html" class="nav-link">Trang chủ</a></li>
+              <li>
+                <a href="case-simulation-library.html" class="nav-link"
+                  >Case Simulation</a
+                >
+              </li>
+              <li>
+                <a href="mcq-topic-list.html" class="nav-link active"
+                  >Mcq Quiz</a
+                >
+              </li>
+              <!-- Ví dụ: MCQ Quiz đang active -->
+              <li>
+                <a href="knowledge-hub.html" class="nav-link">Knowledge Hub</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- THAY ĐỔI Ở ĐÂY: Nút User thay cho Đăng ký/Đăng nhập -->
+          <div class="user-actions">
+            <button class="btn btn-user" id="userMenuButton">
+              <img
+                src="assets/images/default-user-avatar.png"
+                alt="User Avatar"
+                class="user-avatar-icon"
+              />
+              <span>User</span>
+              <!-- Hoặc [Tên Người Dùng] nếu có dữ liệu -->
+              <i class="fas fa-caret-down dropdown-icon"></i>
+              <!-- Icon mũi tên xuống -->
+            </button>
+            <!-- Dropdown menu (ẩn ban đầu) -->
+            <div class="dropdown-menu" id="userDropdownMenu">
+              <a href="profile.html" class="dropdown-item">Hồ sơ của tôi</a>
+              <a href="settings.html" class="dropdown-item">Cài đặt</a>
+              <hr class="dropdown-divider" />
+              <a href="index.html" class="dropdown-item logout-item"
+                >Đăng xuất</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Phần <main> và <footer> sẽ được cập nhật ở các bước dưới -->
+    <main>
+      <section class="dashboard-welcome">
+        <div class="container">
+          <div class="welcome-header">
+            <h2>
+              CHÀO MỪNG QUAY TRỞ LẠI,
+              <span class="user-name-placeholder">[TÊN NGƯỜI DÙNG]</span>!
+            </h2>
+            <p>
+              HÃY BẮT ĐẦU NGÀY HỌC TẬP HIỆU QUẢ! BẠN MUỐN HỌC GÌ CHO HÔM NAY?
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Phần các card điều hướng sẽ được thêm ở Bước 4.5 -->
+    </main>
+    <main>
+      <section class="dashboard-welcome">
+        <!-- ... (Nội dung chào mừng ở trên) ... -->
+      </section>
+
+      <section class="dashboard-navigation">
+        <div class="container">
+          <div class="nav-cards-grid">
+            <!-- Card 1: Case Simulation -->
+            <a href="case-simulation-library.html" class="nav-card">
+              <div class="nav-card-content">
+                <h3>CASE SIMULATION</h3>
+                <p>
+                  Thực Hành Lâm Sàng Ảo với kỹ năng thật,Rèn luyện tư duy Lâm
+                  sàng
+                </p>
+              </div>
+              <div class="nav-card-icon">
+                <i class="fas fa-arrow-right"></i>
+                <!-- Icon mũi tên Font Awesome -->
+                <!-- Hoặc dùng SVG/ảnh: <img src="assets/images/arrow-right.svg" alt="Go"> -->
+              </div>
+            </a>
+
+            <!-- Card 2: MCQ Bank -->
+            <a href="mcq-topic-list.html" class="nav-card">
+              <div class="nav-card-content">
+                <h3>MCQ BANK</h3>
+                <p>
+                  Luyện Tập Trắc Nghiệm (MCQ). Ôn luyện kiến thức qua hàng ngàn
+                  câu hỏi đa dạng.
+                </p>
+              </div>
+              <div class="nav-card-icon">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+
+            <!-- Card 3: Knowledge Hub -->
+            <a href="knowledge-hub.html" class="nav-card">
+              <div class="nav-card-content">
+                <h3>KNOWLEDGE HUB</h3>
+                <p>
+                  Trung Tâm Tài Nguyên. Tra cứu kiến thức y khoa, bài viết
+                  chuyên ngành.
+                </p>
+              </div>
+              <div class="nav-card-icon">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="container">
+        <p>© 2024 Cliniprep. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

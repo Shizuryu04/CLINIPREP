@@ -1,0 +1,146 @@
+[
+  {
+    "id": "case001",
+    "title": "Ca bệnh Tim mạch 01: Đau ngực cấp",
+    "short_description": "Bệnh nhân nam, 65 tuổi, vào viện vì đau ngực trái dữ dội kèm vã mồ hôi và khó thở nhẹ.",
+    "specialty_slug": "tim-mach",
+    "specialty_name": "Tim mạch",
+    "difficulty": "medium",
+    "initial_info": "Bệnh nhân nam, 65 tuổi, tiền sử tăng huyết áp và đái tháo đường type 2 không kiểm soát tốt, đột ngột xuất hiện đau ngực trái dữ dội sau một bữa ăn tối thịnh soạn. Cơn đau được mô tả như bị đè nặng, lan lên vai trái và cằm, kèm theo vã mồ hôi lạnh và cảm giác khó thở nhẹ. Bệnh nhân chưa dùng thuốc gì để giảm đau.",
+    "administrative": {
+      "hoTen": "Nguyễn Văn Tim",
+      "tuoi": 65,
+      "gioiTinh": "nam",
+      "ngheNghiep": "Về hưu",
+      "diaChi": "123 Đường Tim Mạch, Hà Nội"
+    },
+    "history_taking": {
+      "categories": [
+        {
+          "id": "chief_complaint",
+          "name": "Lý do vào viện",
+          "question_ids": ["q_cc_01", "q_cc_02_distractor"]
+        },
+        {
+          "id": "present_illness",
+          "name": "Quá trình Bệnh lý",
+          "question_ids": [
+            "q_pi_01_chestpain_onset",
+            "q_pi_02_chestpain_char",
+            "q_pi_03_chestpain_radiation",
+            "q_pi_04_chestpain_associated_symp",
+            "q_pi_05_distractor_cough"
+          ]
+        },
+        {
+          "id": "past_medical_history",
+          "name": "Tiền sử Bản thân",
+          "question_ids": [
+            "q_pmh_01_htn",
+            "q_pmh_02_dm",
+            "q_pmh_03_dyslipidemia",
+            "q_pmh_04_distractor_asthma"
+          ]
+        }
+      ],
+      "patient_answers": {
+        "q_cc_01": {
+          "text": "Bệnh nhân: Tôi bị đau ngực trái dữ dội.",
+          "medical_record_field": "mrlyDoVaoVien"
+        },
+        "q_pi_01_chestpain_onset": {
+          "text": "Bệnh nhân: Cơn đau bắt đầu đột ngột khoảng 1 tiếng trước, khi tôi đang ngồi xem TV.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pi_02_chestpain_char": {
+          "text": "Bệnh nhân: Đau kiểu như bị ai bóp nghẹt, đè nặng ở ngực.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pi_03_chestpain_radiation": {
+          "text": "Bệnh nhân: Đau lan lên vai trái và mặt trong cánh tay trái.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pi_04_chestpain_associated_symp": {
+          "text": "Bệnh nhân: Có, tôi thấy vã mồ hôi lạnh và hơi khó thở.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pmh_01_htn": {
+          "text": "Bệnh nhân: Tôi bị tăng huyết áp khoảng 10 năm nay, uống thuốc không đều.",
+          "medical_record_field": "mrtienSuBanThan"
+        },
+        "q_pmh_02_dm": {
+          "text": "Bệnh nhân: Tôi cũng bị đái tháo đường type 2 được 5 năm, đang uống Metformin.",
+          "medical_record_field": "mrtienSuBanThan"
+        },
+        "q_pmh_03_dyslipidemia": {
+          "text": "Bệnh nhân: Bác sĩ cũng nói tôi bị rối loạn mỡ máu.",
+          "medical_record_field": "mrtienSuBanThan"
+        },
+        "q_cc_02_distractor": {
+          "text": "Bệnh nhân: Tôi không bị sốt.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pi_05_distractor_cough": {
+          "text": "Bệnh nhân: Tôi không ho, không khạc đờm.",
+          "medical_record_field": "mrbenhSu"
+        },
+        "q_pmh_04_distractor_asthma": {
+          "text": "Bệnh nhân: Tôi không có tiền sử hen suyễn.",
+          "medical_record_field": "mrtienSuBanThan"
+        }
+      }
+    },
+    "physical_exam": {
+      "skills": [
+        {
+          "skill_id": "skill_general_exam",
+          "result": "Bệnh nhân tỉnh, tiếp xúc tốt. Da niêm mạc hồng nhạt. Vã mồ hôi. Mạch: 92 lần/phút, Huyết áp: 160/95 mmHg, Nhiệt độ: 37.1°C, Nhịp thở: 22 lần/phút, SpO2: 95% (khí trời). Cân nặng: 70kg, Chiều cao: 1.7m. Không phù, không xuất huyết dưới da. Tuyến giáp không to, hạch ngoại vi không sờ chạm.",
+          "medical_record_field": "mrkhamToanThan"
+        },
+        {
+          "skill_id": "skill_cardio_exam",
+          "result": "Lồng ngực cân đối, không biến dạng. Mỏm tim đập ở khoang liên sườn V đường giữa đòn trái. Sờ không thấy rung miu. Nghe tim: Nhịp khá đều, tần số khoảng 92 ck/p, T1, T2 rõ. Không nghe thấy tiếng thổi bệnh lý. Tiếng cọ màng ngoài tim (-).",
+          "medical_record_field": "mrkhamTuanHoan"
+        },
+        {
+          "skill_id": "skill_resp_exam",
+          "result": "Lồng ngực di động đều theo nhịp thở. Rì rào phế nang nghe rõ hai bên, không ran. Gõ trong.",
+          "medical_record_field": "mrkhamHoHap"
+        }
+      ]
+    },
+    "lab_investigations": {
+      "unlock_conditions": {
+        "min_history_items_collected": 1,
+        "min_exam_items_collected": 1
+      },
+      "results_for_case": {
+        "lab_ecg": {
+          "result_text": "ECG: Nhịp xoang, tần số 92 ck/p. ST chênh lên ở V1-V4, DII, DIII, aVF. Sóng Q bệnh lý ở DIII, aVF.",
+          "image_url": "assets/images/case001_ecg_example.png",
+          "interpretation_notes": "Hình ảnh gợi ý Nhồi máu cơ tim cấp thành dưới và trước vách.",
+          "medical_record_field_target": "mrketQuaCLS"
+        },
+        "lab_troponin_ths": {
+          "result_text": "Troponin T hs (High-sensitivity): 1850 ng/L (Giá trị bình thường < 14 ng/L).",
+          "interpretation_notes": "Tăng rất cao, khẳng định tổn thương cơ tim.",
+          "medical_record_field_target": "mrketQuaCLS"
+        },
+        "lab_ckmb": {
+          "result_text": "CK-MB: 35 U/L (Giá trị bình thường < 25 U/L).",
+          "interpretation_notes": "Tăng, phù hợp với tổn thương cơ tim.",
+          "medical_record_field_target": "mrketQuaCLS"
+        },
+        "lab_cbc": {
+          "result_text": "Công thức máu: Hồng cầu: 4.5 T/L, Hemoglobin: 140 g/L, Bạch cầu: 9.5 G/L (Neutrophil: 65%, Lympho: 25%), Tiểu cầu: 250 G/L. Các chỉ số trong giới hạn bình thường.",
+          "medical_record_field_target": "mrketQuaCLS"
+        },
+        "lab_xray_chest_pa": {
+          "result_text": "X-quang ngực thẳng: Tim không to, không thấy hình ảnh tổn thương nhu mô phổi hai bên. Các góc sườn hoành và vòm hoành bình thường.",
+          "image_url": "assets/images/case001_cxr_example.png",
+          "medical_record_field_target": "mrketQuaCLS"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "categories": [
+    { "id": "general", "name": "Khám Toàn Thân & Dấu hiệu sinh tồn" },
+    { "id": "cardiovascular", "name": "Khám Tim Mạch" },
+    { "id": "respiratory", "name": "Khám Hô Hấp" },
+    { "id": "gastrointestinal", "name": "Khám Tiêu Hóa" }
+  ],
+  "skills": [
+    {
+      "id": "skill_general_exam",
+      "category_id": "general",
+      "name": "Thực hiện Khám Toàn Thân và Đo Dấu Hiệu Sinh Tồn",
+      "mcqs": [
+        {
+          "id": "mcq_ge_01",
+          "question": "Khi đo huyết áp, bao đo cần quấn ở vị trí nào so với nếp gấp khuỷu tay?",
+          "options": {
+            "a": "Trên nếp gấp khuỷu 2-3 cm",
+            "b": "Ngay tại nếp gấp khuỷu",
+            "c": "Dưới nếp gấp khuỷu 2-3 cm"
+          },
+          "correct_answer": "a"
+        },
+        {
+          "id": "mcq_ge_02",
+          "question": "Dấu hiệu sinh tồn nào sau đây thường được ưu tiên đánh giá đầu tiên ở bệnh nhân cấp cứu?",
+          "options": {
+            "a": "Nhiệt độ",
+            "b": "Nhịp thở và SpO2",
+            "c": "Huyết áp"
+          },
+          "correct_answer": "b"
+        }
+      ]
+    },
+    {
+      "id": "skill_cardio_exam",
+      "category_id": "cardiovascular",
+      "name": "Khám Tim",
+      "mcqs": [
+        {
+          "id": "mcq_ce_01",
+          "question": "Vị trí nghe rõ nhất của tiếng T1 thường ở đâu?",
+          "options": {
+            "a": "Ổ van động mạch chủ",
+            "b": "Mỏm tim",
+            "c": "Ổ van động mạch phổi"
+          },
+          "correct_answer": "b"
+        }
+      ]
+    },
+    {
+      "id": "skill_resp_exam",
+      "category_id": "respiratory",
+      "name": "Khám Phổi (Nghe phổi)",
+      "mcqs": []
+    }
+  ]
+}
