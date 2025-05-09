@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     caseListingGrid.innerHTML = ""; // Xóa card cũ
 
     try {
-      const response = await fetch("http://localhost:3000/api/cases"); // Gọi API backend
+      const response = await fetch("https://cliniprep.onrender.com/api/cases"); // Gọi API backend
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
