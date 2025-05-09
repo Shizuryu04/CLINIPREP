@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let allLabsFromBank = []; // Stores all labs fetched from the lab bank for client-side filtering
 
   // Base URL for API calls (configurable if needed)
-  const API_BASE_URL = "https://cliniprep.onrender.com/cases";
+  const API_BASE_URL = "https://cliniprep.onrender.com/api/cases";
   let currentExtractedTags = [];
 
   /// --- Canvas Specific State ---
@@ -162,6 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
     blocks: {}, // { blockId: { id, type, x, y, title, content:[...] }, ... }
     connections: {}, // { connId: { id, from, to, note:"" }, ... }
   };
+  st;
   let nextBlockIdCounter = 0;
   let nextConnectionIdCounter = 0;
   let selectedCanvasObjectId = null; // ID của block hoặc connection đang được chọn
